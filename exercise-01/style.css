@@ -2,6 +2,18 @@
  * A very basic CSS reset:
  * More about CSS resets: https://meyerweb.com/eric/tools/css/reset/
  */
+@font-face {
+  font-family: "Diaspora Trial";
+  src: url("fonts/DiasporaTrial-Regular.otf");
+}
+@font-face {
+  font-family: "Akzidenz-Grotesk BQ medium";
+  src: url("fonts/AkzidenzGrotesk-Medium.otf");
+}
+@font-face {
+  font-family: "Akzidenz-Grotesk BQ italic";
+  src: url("fonts/AkzidenzGrotesk-MediumItalic.otf");
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -84,7 +96,7 @@ h1 {
 }
 
 p {
-  font-family: "Akzidenz-Grotesk BQ";
+  font-family: "Akzidenz-Grotesk BQ medium";
   font-style: medium;
   font-size: 11.5px;
   line-height: 14px;
@@ -94,6 +106,7 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-family: "Akzidenz-Grotesk BQ italic";
   font-style: italic;
   border-top: 1px solid #47560c;
 }
