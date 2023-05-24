@@ -53,3 +53,52 @@ console.log("recipe.duration:", recipe.duration);
 const myArray = ["jonas", "elias", "cyril", "jin", "tara"];
 
 console.log("myArray[2]: ", myArray[2]);
+
+//make a function
+const amountOfIADPeoples = 18;
+
+function countIADPeoles(parameter) {
+  //do something
+}
+function add(x, y, z) {
+  return x + y + z;
+  //const myFunctionResult = x + y + z; //dosen't works. it needs the return
+}
+const result1 = add(1, 2, 3); //connected to the function. If there is no return in it, the numbers in the add() are undefined
+
+console.log("result1: + ", result1);
+
+const number1 = 2;
+const number2 = 4;
+const number3 = 6;
+
+const result2 = add(number1, number2, number3);
+console.log("result2: + ", result2);
+
+// Team objects---------------------------------------------------------------------------------------------------
+let myAge = 12;
+
+function changeAge() {
+  return 14;
+}
+console.log("myAge: ", myAge);
+myAge = changeAge();
+console.log("myAge after change: ", myAge);
+
+// Team objects---------------------------------------------------------------------------------------------------
+const team = {
+  goalie: "irina",
+  verteidiger: "basil",
+  mittelfeld: "michi",
+  zuschauer: "greg",
+};
+
+function printClassList(goalie, verteidiger, mittelfeld, zuschauer) {
+  console.log(`the goalie with the name: ${goalie}is right`); //shift ^für `zeiche
+}
+
+function printTeamPositions({ goalie, verteidiger }) {
+  console.log("goalie:", goalie);
+  console.log("verteidiger:", verteidiger);
+}
+printTeamPositions(team);
