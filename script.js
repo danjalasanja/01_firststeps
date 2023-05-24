@@ -8,12 +8,14 @@ message =
 // alert(message);
 console.log(message);
 
+//change variabes ---------------------------------------------------------------------------------------------------
 let admin, name;
 
 name = "John";
 admin = name;
 console.log(admin);
 
+// console log more than one word ---------------------------------------------------------------------------------------------------
 let fruit1 = "banane";
 let fruit2 = "orange";
 let fruchtsalat;
@@ -22,7 +24,7 @@ fruchtsalat = fruit1 + ", " + fruit2;
 
 console.log(fruchtsalat);
 
-//if statement
+// if statements ---------------------------------------------------------------------------------------------------
 const currentWeather = "rainy";
 
 if (currentWeather === "sunny") {
@@ -31,7 +33,7 @@ if (currentWeather === "sunny") {
   console.log("rain");
 }
 
-//objects
+// create objects ---------------------------------------------------------------------------------------------------
 const myNumber = 273929;
 
 const recipe = {
@@ -49,12 +51,12 @@ recipe.duration = "40min";
 
 console.log("recipe.duration:", recipe.duration);
 
-//arrays
+// create an array -------------------------------------------------------------------------------------------------
 const myArray = ["jonas", "elias", "cyril", "jin", "tara"];
 
 console.log("myArray[2]: ", myArray[2]);
 
-//make a function
+// make a function with return parameters --------------------------------------------------------------------------
 const amountOfIADPeoples = 18;
 
 function countIADPeoles(parameter) {
@@ -75,7 +77,7 @@ const number3 = 6;
 const result2 = add(number1, number2, number3);
 console.log("result2: + ", result2);
 
-// Team objects---------------------------------------------------------------------------------------------------
+// functrion with return to change the age ------------------------------------------------------------------------
 let myAge = 12;
 
 function changeAge() {
@@ -85,7 +87,7 @@ console.log("myAge: ", myAge);
 myAge = changeAge();
 console.log("myAge after change: ", myAge);
 
-// Team objects---------------------------------------------------------------------------------------------------
+// Team objects and function ---------------------------------------------------------------------------------------
 const team = {
   goalie: "irina",
   verteidiger: "basil",
