@@ -40,11 +40,12 @@ body {
   flex-direction: column;
   justify-content: space-between;
   background-color: rgba(236, 212, 212, 1);
-  color: rgba(71, 86, 12, 1);
+  /* color: rgba(71, 86, 12, 1); */
   border-radius: 5px;
   padding: 25px;
   padding-bottom: 20px;
   text-transform: uppercase;
+  position: relative;
 }
 
 .toprow {
@@ -59,8 +60,6 @@ body {
 .dot {
   height: 25px;
   width: 25px;
-  background-color: rgba(253, 117, 30, 1);
-  box-shadow: inset 3px 3px 4px #47560c;
   border-radius: 50%;
   display: inline-block;
 }
@@ -72,10 +71,9 @@ body {
   margin-top: 10px;
   overflow: hidden;
   /* watched a youtube video on how to make this box-shadow on a image */
-  background-image: url("img/orange.jpg");
+
   background-size: cover;
   background-position: center 40%;
-  box-shadow: inset 29px 27px 30px -19px #fd751e;
   border-radius: 121px 121px 0px 0px;
   /* filter: saturate(0.2); */
   transition: ease-in-out 0.2s;
@@ -134,4 +132,17 @@ p {
   font-family: "Akzidenz-Grotesk BQ italic";
   font-style: italic;
   border-top: 1px solid #47560c;
+}
+
+.carousel-buttons {
+  position: absolute;
+  top: calc(540px / 2);
+}
+
+#next-button {
+  right: -40px;
+}
+
+#previous-button {
+  left: -40px;
 }
