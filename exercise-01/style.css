@@ -72,7 +72,7 @@ body {
   margin-top: 10px;
   overflow: hidden;
   /* watched a youtube video on how to make this box-shadow on a image */
-  background-image: url("orange.jpg");
+  background-image: url("img/orange.jpg");
   background-size: cover;
   background-position: center 40%;
   box-shadow: inset 29px 27px 30px -19px #fd751e;

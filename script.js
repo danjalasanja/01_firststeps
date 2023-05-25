@@ -104,3 +104,13 @@ function printTeamPositions({ goalie, verteidiger }) {
   console.log("verteidiger:", verteidiger);
 }
 printTeamPositions(team);
+
+// test card -----------------------------------------------------------------------------------------------------
+const cardArray = [
+  { titel: "Oranges", imgUrl: "img/oranges.png" },
+  { titel: "Oranges", imgUrl: "img/oranges.png" },
+  { titel: "Oranges", imgUrl: "img/oranges.png" },
+  { titel: "Oranges", imgUrl: "img/oranges.png" },
+  { titel: "Oranges", imgUrl: "img/oranges.png" },
+  { titel: "Oranges", imgUrl: "img/oranges.png" },
+];

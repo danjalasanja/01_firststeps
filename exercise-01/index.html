@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Card</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- defer seit, dass s js erst am endi usgfüert.denn chans uf interaktion reagiere -->
+    <script defer src="script.js"></script>
   </head>
 
   <body>
@@ -19,6 +21,10 @@
       <!-- no image link because it needs to be in the css, beause of the box-shadow -->
       <div class="main-image"></div>
       <div class="describtion">
+        <div>
+          <button id="my-button" onclick="countRabbits()">My Button</button>
+        </div>
+
         <h1>Oranges</h1>
         <p>
           Orange trees are small to medium sized evergreen trees with growth
