@@ -92,7 +92,8 @@ function renderCard() {
   const cardData = cardArray[currentCard % (cardArray.length - 1)];
   card.innerHTML = `
   <div>
-  <button id="next-button" class="carousel-buttons" onClick=changeCard("next")>→</button>
+  <button id="next-button" class="carousel-buttons" onmouseover="this.style.color='red'"
+  onmouseout ="this.style.color='blue'"onClick=changeCard("next")>→</button>
   <button id="previous-button" class="carousel-buttons" onClick=changeCard("previous")>←</button>
   <div style="color: ${cardData.textColor}">
   <div class="toprow">

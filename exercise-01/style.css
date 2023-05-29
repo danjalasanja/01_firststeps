@@ -137,12 +137,22 @@ p {
 .carousel-buttons {
   position: absolute;
   top: calc(540px / 2);
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  color: rgb(0, 0, 0);
+  background: #ecd4d4;
+  box-shadow: inset 3px 3px 4px #47560c;
 }
 
+/* .carousel-buttons:hover {
+  background-color: #47560c;
+} */
+
 #next-button {
-  right: -40px;
+  right: -60px;
 }
 
 #previous-button {
-  left: -40px;
+  left: -60px;
 }
