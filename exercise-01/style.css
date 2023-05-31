@@ -21,7 +21,7 @@
   margin: 0;
   padding: 0;
 }
-/* r. Watched a youtube videcopied that in to change the backgroundcolor on it */
+/* Watched a youtube videcopied that in to change the backgroundcolor on it */
 body {
   background-color: rgba(30, 30, 30, 1);
 }
@@ -40,7 +40,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
   background-color: rgba(236, 212, 212, 1);
-  /* color: rgba(71, 86, 12, 1); */
   border-radius: 5px;
   padding: 25px;
   padding-bottom: 20px;
@@ -96,14 +95,6 @@ body {
   justify-content: space-between;
 }
 
-#answers {
-  background: #ecd4d4;
-  height: 36px;
-  border: 1px solid #000000;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 14px;
-}
-
 .toprow {
   display: flex;
   justify-content: space-between;
@@ -128,36 +119,15 @@ body {
   margin-top: 10px;
   overflow: hidden;
   /* watched a youtube video on how to make this box-shadow on a image */
-
   background-size: cover;
   background-position: center 40%;
   border-radius: 121px 121px 0px 0px;
-  /* filter: saturate(0.2); */
   transition: ease-in-out 0.2s;
-  /* animation-play-state: paused; */
 }
 
 .main-image:hover {
-  /* filter: saturate(1); */
   transform: translateY(-10px);
-  /* background-position: center 50%; */
-  /* transform: rotateY(360deg);
-  animation-name: spin;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-play-state: running; */
 }
-
-/* youtube tutorial how to spin an images */
-/* @keyframes spin {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
-} */
 
 .describtion {
   display: flex;
@@ -216,10 +186,6 @@ input {
   background: #ecd4d4;
   box-shadow: inset 3px 3px 4px #47560c;
 }
-
-/* .carousel-buttons:hover {
-  background-color: #47560c;
-} */
 
 #next-button {
   right: -60px;

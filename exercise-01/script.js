@@ -3,6 +3,7 @@ let currentQuestion = 0;
 let result = 0;
 let currentCard = 0;
 
+// array for Questions
 const questionaryArray = [
   {
     question: "Where do you prefer to sit in the train?",
@@ -24,6 +25,7 @@ const questionaryArray = [
   },
 ];
 
+// array for card inputs
 const cardArray = [
   {
     titel: "Oranges",
@@ -97,11 +99,12 @@ const cardArray = [
   ,
 ];
 
+// get the inputvalue of the user name
 function getInputValue() {
-  let inputValue = document.querySelector("#textInput").value;
-  return inputValue;
+  return document.querySelector("#textInput").value;
 }
 
+// display the questionary
 function renderQuestionary() {
   const card = document.getElementById("card-wrapper");
   const cardQuestionary =
@@ -110,31 +113,30 @@ function renderQuestionary() {
   <div class="card-questionary">
   <h1>select your favorite answer.</h1>
   <p>${cardQuestionary.question}</p>
-  <button id="answers" onClick=calculateResult("answer1")>${cardQuestionary.answer1}</button>
-  <button id="answers"onClick=calculateResult("answer2")>${cardQuestionary.answer2}</button>
-  <button id="answers"onClick=calculateResult("answer3")>${cardQuestionary.answer3}</button>
+  <button onClick=calculateResult("answer1")>${cardQuestionary.answer1}</button>
+  <button onClick=calculateResult("answer2")>${cardQuestionary.answer2}</button>
+  <button onClick=calculateResult("answer3")>${cardQuestionary.answer3}</button>
   </div>
   `;
 }
 
+// save the user name until i use it in the card template
 function saveInputName() {
   userName = getInputValue();
   calculateResult();
 }
 
+// calculate which card should be shown, based on the questions.
 function calculateResult(operation) {
   switch (operation) {
     case "answer1":
       result += 0;
-      console.log(result);
       break;
     case "answer2":
       result += 1;
-      console.log(result);
       break;
     case "answer3":
       result += 2;
-      console.log(result);
       break;
   }
 
@@ -146,6 +148,7 @@ function calculateResult(operation) {
   }
 }
 
+// to swich in the end between the cards
 function changeCard(operation) {
   switch (operation) {
     case "next":
@@ -159,9 +162,9 @@ function changeCard(operation) {
   renderCard();
 }
 
+// display the fruit cards
 function renderCard() {
   const card = document.getElementById("card-wrapper");
-  // const cardData = cardArray[currentCard % (cardArray.length - 1)];
   const cardData = cardArray[result % (cardArray.length - 1)];
   card.innerHTML = `
   <div class="card-fruit">
