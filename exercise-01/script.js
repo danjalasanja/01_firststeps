@@ -1,3 +1,8 @@
+let userName = "";
+let currentQuestion = 0;
+let result = 0;
+let currentCard = 0;
+
 const cardArray = [
   {
     titel: "Oranges",
@@ -97,8 +102,6 @@ function getInputValue() {
   return inputValue;
 }
 
-let currentQuestion = 0;
-
 function renderQuestionary() {
   const card = document.getElementById("card-wrapper");
   const cardQuestionary =
@@ -113,8 +116,6 @@ function renderQuestionary() {
   </div>
   `;
 }
-
-let result = 0;
 
 function saveInputName() {
   userName = getInputValue();
@@ -144,8 +145,6 @@ function calculateResult1(operation) {
   }
 }
 
-let currentCard = 0;
-
 function changeCard(operation) {
   switch (operation) {
     case "next":
@@ -158,7 +157,6 @@ function changeCard(operation) {
   }
   renderCard();
 }
-let userName = "";
 
 function renderCard() {
   const card = document.getElementById("card-wrapper");
