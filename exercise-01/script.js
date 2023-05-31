@@ -71,51 +71,6 @@ const cardArray = [
   ,
 ];
 
-let currentCard = 0;
-
-function changeCard(operation) {
-  switch (operation) {
-    case "next":
-      currentCard++;
-
-      break;
-    case "previous":
-      currentCard--;
-      break;
-  }
-  renderCard();
-}
-
-function renderCard() {
-  const card = document.getElementById("card-wrapper");
-  // const userName = getInputValue();
-  const userName = "anja";
-  const cardData = cardArray[currentCard % (cardArray.length - 1)];
-  card.innerHTML = `
-  <div class="card-fruit">
-  <button id="next-button" class="carousel-buttons" onClick=changeCard("next")>→</button>
-  <button id="previous-button" class="carousel-buttons" onClick=changeCard("previous")>←</button>
-  <button id="start" onclick="renderQuestionary()">Next</button>
-  <div style="color: ${cardData.textColor}">
-  <div class="toprow">
-          <p>Hey ${userName}. Embrace your inner ${cardData.welcomeText}</p>
-          <div class="dot" style="${cardData.dotStyle}"></div>
-        </div>
-        <div class="main-image" style="background-image: url('${cardData.imgURL}');${cardData.imgShadow}"></div>
-        <div class="describtion">
-          <h1>${cardData.titel}</h1>
-          <p>
-          ${cardData.description}</p>
-          <div class="mengenangabe">
-            <p>${cardData.recipe[0]}</p>
-            <p>${cardData.recipe[1]}</p>
-            <p>${cardData.recipe[2]}</p>
-          </div>
-          </div>
-          </div>
-          `;
-}
-
 const questionaryArray = [
   {
     question: "Where do you prefer to sit in the train?",
@@ -137,6 +92,11 @@ const questionaryArray = [
   },
 ];
 
+function getInputValue() {
+  let inputValue = document.querySelector("#textInput").value;
+  return inputValue;
+}
+
 let currentQuestion = 0;
 
 function renderQuestionary() {
@@ -144,39 +104,86 @@ function renderQuestionary() {
   const cardQuestionary =
     questionaryArray[currentQuestion % questionaryArray.length];
   card.innerHTML = `
-  <div class="cardQuestionary">
+  <div class="card-questionary">
   <h1>select your favorite answer.</h1>
   <p>${cardQuestionary.question}</p>
-  <button onClick=calculateResult1("answer1")>${cardQuestionary.answer1}</button>
-  <button onClick=calculateResult1("answer2")>${cardQuestionary.answer2}</button>
-  <button onClick=calculateResult1("answer2")>${cardQuestionary.answer3}</button>
-          </div>
-          `;
-}
-
-function getInputValue() {
-  let inputValue = document.querySelector("#textInput").value;
-  return inputValue;
+  <button id="answers" onClick=calculateResult1("answer1")>${cardQuestionary.answer1}</button>
+  <button id="answers"onClick=calculateResult1("answer2")>${cardQuestionary.answer2}</button>
+  <button id="answers"onClick=calculateResult1("answer2")>${cardQuestionary.answer3}</button>
+  </div>
+  `;
 }
 
 let result = 0;
 
+function saveInputName() {
+  userName = getInputValue();
+  calculateResult1();
+}
+
 function calculateResult1(operation) {
+  if (currentQuestion < 2) {
+    switch (operation) {
+      case "answer1":
+        result++;
+        console.log(result);
+        break;
+      case "answer2":
+        result += 2;
+        console.log(result);
+        break;
+      case "answer3":
+        result += 2;
+        console.log(result);
+        break;
+    }
+    currentQuestion++;
+    renderQuestionary();
+  } else {
+    renderCard();
+  }
+}
+
+let currentCard = 0;
+
+function changeCard(operation) {
   switch (operation) {
-    case "answer1":
-      result++;
-      console.log(result);
+    case "next":
+      currentCard++;
+
       break;
-    case "answer2":
-      result += 2;
-      console.log(result);
-      break;
-    case "answer3":
-      result += 2;
-      console.log(result);
+    case "previous":
+      currentCard--;
       break;
   }
-  currentQuestion++;
-  renderQuestionary();
-  // renderCard();
+  renderCard();
+}
+let userName = "";
+
+function renderCard() {
+  const card = document.getElementById("card-wrapper");
+  const cardData = cardArray[currentCard % (cardArray.length - 1)];
+  console.log(result);
+  card.innerHTML = `
+  <div class="card-fruit">
+  <button id="next-button" class="carousel-buttons" onClick=changeCard("next")>→</button>
+  <button id="previous-button" class="carousel-buttons" onClick=changeCard("previous")>←</button>
+  <div style="color: ${cardData.textColor}">
+  <div class="toprow">
+          <p>Hey ${userName}. Embrace your inner ${cardData.welcomeText}</p>
+          <div class="dot" style="${cardData.dotStyle}"></div>
+        </div>
+        <div class="main-image" style="background-image: url('${cardData.imgURL}');${cardData.imgShadow}"></div>
+        <div class="describtion">
+          <h1>${cardData.titel}</h1>
+          <p>
+          ${cardData.description}</p>
+          <div class="mengenangabe">
+            <p>${cardData.recipe[0]}</p>
+            <p>${cardData.recipe[1]}</p>
+            <p>${cardData.recipe[2]}</p>
+          </div>
+          </div>
+          </div>
+          `;
 }

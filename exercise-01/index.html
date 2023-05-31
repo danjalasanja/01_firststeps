@@ -13,14 +13,18 @@
   <body>
     <!-- Keep this div with the class card! -->
     <div class="card" id="card-wrapper">
-      <h1>Hey!</h1>
-      <p>Do you wanna find out to which fruit you belong?</p>
-      <p>enter your name here:
-      </p>
+      <div class="card-inputName">
 
-      <input type="text" id="textInput" />
+        <h1>Hey! <br> Find out what fruit you are.</h1>
+        <p>enter your name here:</p>
+        
+        <div class="nameField">
 
-      <button id="start" onclick="renderCard()">Next</button>
+          <input type="text" id="textInput" />
+          
+          <button id="start" onclick="renderQuestionary()">Next</button>
+        </div>
+        </div>
       </div>
     </div>
   </body>
