@@ -3,6 +3,27 @@ let currentQuestion = 0;
 let result = 0;
 let currentCard = 0;
 
+const questionaryArray = [
+  {
+    question: "Where do you prefer to sit in the train?",
+    answer1: "upstairs",
+    answer2: "downstairs",
+    answer3: "in the middle",
+  },
+  {
+    question: "Wich is your favorite time in the year?",
+    answer1: "Summer",
+    answer2: "Winter",
+    answer3: "not really a preference",
+  },
+  {
+    question: "Which roof type do you prefer on buildings?",
+    answer1: "Pitched roof",
+    answer2: "Flat roof",
+    answer3: "Shed roof",
+  },
+];
+
 const cardArray = [
   {
     titel: "Oranges",
@@ -74,27 +95,6 @@ const cardArray = [
     recipe: ["1L Juice", "5 pears", "1 KG"],
   },
   ,
-];
-
-const questionaryArray = [
-  {
-    question: "Where do you prefer to sit in the train?",
-    answer1: "upstairs",
-    answer2: "downstairs",
-    answer3: "in the middle",
-  },
-  {
-    question: "Wich is your favorite time in the year?",
-    answer1: "Summer",
-    answer2: "Winter",
-    answer3: "not really a preference",
-  },
-  {
-    question: "Which roof type do you prefer on buildings?",
-    answer1: "Pitched roof",
-    answer2: "Flat roof",
-    answer3: "Shed roof",
-  },
 ];
 
 function getInputValue() {
