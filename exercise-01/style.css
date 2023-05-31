@@ -35,7 +35,7 @@ body {
   margin: 40px auto 0 auto;
 }
 
-.card {
+.card-fruit {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -84,12 +84,12 @@ body {
   /* filter: saturate(1); */
   transform: translateY(-10px);
   /* background-position: center 50%; */
-  /* transform: rotateY(360deg); */
-  /* animation-name: spin;
+  /* transform: rotateY(360deg);
+  animation-name: spin;
   animation-duration: 1s;
   animation-iteration-count: infinite;
-  animation-timing-function: linear; */
-  /* animation-play-state: running; */
+  animation-timing-function: linear;
+  animation-play-state: running; */
 }
 
 /* youtube tutorial how to spin an images */
@@ -155,4 +155,20 @@ p {
 
 #previous-button {
   left: -60px;
+}
+
+#start {
+  background: #ecd4d4;
+  width: 56px;
+  height: 31px;
+  left: 27px;
+  top: 458px;
+  border: 1px solid #000000;
+  border-radius: 14px;
+}
+
+#textInput {
+  background: #ffffff;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
 }

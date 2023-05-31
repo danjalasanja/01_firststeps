@@ -88,13 +88,14 @@ function changeCard(operation) {
 
 function renderCard() {
   const card = document.getElementById("card-wrapper");
+  // const userName = getInputValue();
   const userName = "anja";
   const cardData = cardArray[currentCard % (cardArray.length - 1)];
   card.innerHTML = `
-  <div>
-  <button id="next-button" class="carousel-buttons" onmouseover="this.style.color='red'"
-  onmouseout ="this.style.color='blue'"onClick=changeCard("next")>→</button>
+  <div class="card-fruit">
+  <button id="next-button" class="carousel-buttons" onClick=changeCard("next")>→</button>
   <button id="previous-button" class="carousel-buttons" onClick=changeCard("previous")>←</button>
+  <button id="start" onclick="renderQuestionary()">Next</button>
   <div style="color: ${cardData.textColor}">
   <div class="toprow">
           <p>Hey ${userName}. Embrace your inner ${cardData.welcomeText}</p>
@@ -113,4 +114,69 @@ function renderCard() {
           </div>
           </div>
           `;
+}
+
+const questionaryArray = [
+  {
+    question: "Where do you prefer to sit in the train?",
+    answer1: "upstairs",
+    answer2: "downstairs",
+    answer3: "in the middle",
+  },
+  {
+    question: "Wich is your favorite time in the year?",
+    answer1: "Summer",
+    answer2: "Winter",
+    answer3: "not really a preference",
+  },
+  {
+    question: "Which roof type do you prefer on buildings?",
+    answer1: "Pitched roof",
+    answer2: "Flat roof",
+    answer3: "Shed roof",
+  },
+];
+
+let currentQuestion = 0;
+
+function renderQuestionary() {
+  const card = document.getElementById("card-wrapper");
+  const cardQuestionary =
+    questionaryArray[currentQuestion % questionaryArray.length];
+  card.innerHTML = `
+  <div class="cardQuestionary">
+  <h1>select your favorite answer.</h1>
+  <p>${cardQuestionary.question}</p>
+  <button onClick=calculateResult1("answer1")>${cardQuestionary.answer1}</button>
+  <button onClick=calculateResult1("answer2")>${cardQuestionary.answer2}</button>
+  <button onClick=calculateResult1("answer2")>${cardQuestionary.answer3}</button>
+          </div>
+          `;
+}
+
+function getInputValue() {
+  let inputValue = document.querySelector("#textInput").value;
+  return inputValue;
+}
+
+let result = 0;
+
+function calculateResult1(operation) {
+  switch (operation) {
+    case "answer1":
+      result++;
+      console.log(result);
+      break;
+    case "answer2":
+      result += 2;
+      console.log(result);
+      break;
+    case "answer3":
+      result += 2;
+      console.log(result);
+      break;
+  }
+  currentQuestion++;
+  renderQuestionary();
+  // renderCard();
 }
