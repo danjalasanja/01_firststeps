@@ -11,7 +11,7 @@ const questionaryArray = [
     answer3: "in the middle",
   },
   {
-    question: "Wich is your favorite time in the year?",
+    question: "What is your favorite season of the year?",
     answer1: "Summer",
     answer2: "Winter",
     answer3: "not really a preference",
@@ -110,34 +110,35 @@ function renderQuestionary() {
   <div class="card-questionary">
   <h1>select your favorite answer.</h1>
   <p>${cardQuestionary.question}</p>
-  <button id="answers" onClick=calculateResult1("answer1")>${cardQuestionary.answer1}</button>
-  <button id="answers"onClick=calculateResult1("answer2")>${cardQuestionary.answer2}</button>
-  <button id="answers"onClick=calculateResult1("answer2")>${cardQuestionary.answer3}</button>
+  <button id="answers" onClick=calculateResult("answer1")>${cardQuestionary.answer1}</button>
+  <button id="answers"onClick=calculateResult("answer2")>${cardQuestionary.answer2}</button>
+  <button id="answers"onClick=calculateResult("answer3")>${cardQuestionary.answer3}</button>
   </div>
   `;
 }
 
 function saveInputName() {
   userName = getInputValue();
-  calculateResult1();
+  calculateResult();
 }
 
-function calculateResult1(operation) {
-  if (currentQuestion < 2) {
-    switch (operation) {
-      case "answer1":
-        result++;
-        console.log(result);
-        break;
-      case "answer2":
-        result += 2;
-        console.log(result);
-        break;
-      case "answer3":
-        result += 2;
-        console.log(result);
-        break;
-    }
+function calculateResult(operation) {
+  switch (operation) {
+    case "answer1":
+      result += 0;
+      console.log(result);
+      break;
+    case "answer2":
+      result += 1;
+      console.log(result);
+      break;
+    case "answer3":
+      result += 2;
+      console.log(result);
+      break;
+  }
+
+  if (currentQuestion < 3) {
     currentQuestion++;
     renderQuestionary();
   } else {
@@ -148,11 +149,11 @@ function calculateResult1(operation) {
 function changeCard(operation) {
   switch (operation) {
     case "next":
-      currentCard++;
+      result++;
 
       break;
     case "previous":
-      currentCard--;
+      result--;
       break;
   }
   renderCard();
@@ -160,15 +161,15 @@ function changeCard(operation) {
 
 function renderCard() {
   const card = document.getElementById("card-wrapper");
-  const cardData = cardArray[currentCard % (cardArray.length - 1)];
-  console.log(result);
+  // const cardData = cardArray[currentCard % (cardArray.length - 1)];
+  const cardData = cardArray[result % (cardArray.length - 1)];
   card.innerHTML = `
   <div class="card-fruit">
   <button id="next-button" class="carousel-buttons" onClick=changeCard("next")>→</button>
   <button id="previous-button" class="carousel-buttons" onClick=changeCard("previous")>←</button>
   <div style="color: ${cardData.textColor}">
   <div class="toprow">
-          <p>Hey ${userName}. Embrace your inner ${cardData.welcomeText}</p>
+          <p>Hey ${userName}, Embrace your inner ${cardData.welcomeText}</p>
           <div class="dot" style="${cardData.dotStyle}"></div>
         </div>
         <div class="main-image" style="background-image: url('${cardData.imgURL}');${cardData.imgShadow}"></div>

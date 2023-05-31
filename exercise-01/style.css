@@ -52,7 +52,6 @@ body {
   width: 300px;
   height: 540px;
   margin: 40px auto 0 auto;
-  margin: 40px auto 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -69,7 +68,6 @@ body {
   width: 300px;
   height: 540px;
   margin: 40px auto 0 auto;
-  margin: 40px auto 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -83,20 +81,14 @@ body {
 }
 
 #start {
-  background: #ecd4d4;
   width: 65px;
-  height: 36px;
-  border: 1px solid #624234;
-  border-radius: 14px;
 }
 
 #textInput {
-  background: #ecd4d4;
   width: 175px;
-  height: 36px;
-  border: 1px solid #624234;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 14px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .nameField {
@@ -106,7 +98,6 @@ body {
 
 #answers {
   background: #ecd4d4;
-  width: 175px;
   height: 36px;
   border: 1px solid #000000;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -189,6 +180,21 @@ p {
   font-style: medium;
   font-size: 11.5px;
   line-height: 14px;
+}
+
+button,
+input {
+  background: #ecd4d4;
+  height: 36px;
+  border: 1px solid #624234;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+  font-family: "Akzidenz-Grotesk BQ medium";
+  font-style: medium;
+  font-size: 11.5px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: #624234;
 }
 
 .mengenangabe {
